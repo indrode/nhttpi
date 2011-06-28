@@ -83,7 +83,8 @@ module NHTTPI
     # Expects a +url+, validates its validity and returns a +URI+ object.
     def normalize_url!(url)
       raise ArgumentError, "Invalid URL: #{url}" unless url.to_s =~ /^http/
-      url.kind_of?(URI) ? url : URI(url)        # fix this to make invalid hosts valid
+      #url.kind_of?(URI) ? url : Addressable::URI(url)        # fix this to make invalid hosts valid
+      url
     end
 
   end
